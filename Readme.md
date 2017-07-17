@@ -1,7 +1,7 @@
 ## Command Memorizer [V1]
 cm1 is a simple CLI tool for managing frequently run commands. It can be used to memorize chain of CLI commands, create short key aliases for easy recall and run processes at a later time.
 
-Cm1 also provides a simple web GUI for managing commands (https://cm1cs.herokuapp.com/) .. This is particularly useful if you use / run same commands on different devices or if you are changing devices altogether. You can manage these commands from the web gui, pull them into your local device using the token generated from the GUI.
+Cm1 also provides a simple web GUI for managing commands [https://cm1cs.herokuapp.com/](https://cm1cs.herokuapp.com/) .. This is particularly useful if you use / run same commands on different devices or if you are changing devices altogether. You can manage these commands from the web gui, pull them into your local device using the token generated from the GUI.
 
 ### Installation
 ```
@@ -73,7 +73,7 @@ cm1 --clear
 ```
 cm1 --init tokenvalue [-d]
 ```
-Token can be gotten from (https://cm1cs.herokuapp.com/). If the -d flag is passed, tokenvalue will also be set as the default token to use with cm1.
+Token can be gotten from [https://cm1cs.herokuapp.com/](https://cm1cs.herokuapp.com/). If the -d flag is passed, tokenvalue will also be set as the default token to use with cm1.
 
 
 
