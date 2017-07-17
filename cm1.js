@@ -266,9 +266,12 @@ if(!program.pull && !program.push && !program.list && !program.clear && !program
 
 	//console.log(program.args);
 	var file_rem_key = program.args[0];
-	if(file_rem_key && getStorage()[file_rem_key.trim()] ){
+	var localStorage = getStorage();
+	var token = localStorage.default_token;
 
-		var command_to_recall = getStorage()[file_rem_key]; 
+	if(file_rem_key && localStorage.local[token] && localStorage.local[token].commands && localStorage.local[token].commands[file_rem_key.trim()] ){
+
+		var command_to_recall = localStorage.local[token].commands[file_rem_key.trim()];
 
 		command_to_recall = (processReplacements(command_to_recall, program.args));
 		if(program.noexec){
@@ -283,7 +286,7 @@ if(!program.pull && !program.push && !program.list && !program.clear && !program
 		}
 	}
 	else{
-		console.log('No MEMR entry with the key', file_rem_key);
+		console.log('No CM1 entry with the key', file_rem_key);
 	}
 
 }
