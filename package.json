@@ -1,0 +1,33 @@
+{
+  "name": "cm1",
+  "version": "0.0.0",
+  "description": "Command Recaller",
+  "main": "cm1.js",
+  "preferGlobal": true,
+  "bin": {
+    "cm1": "cm1.js"
+  },
+  "scripts": {
+    "test": "mocha --reporter spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/4y0/cm1.git"
+  },
+  "keywords": [
+    "CLI"
+  ],
+  "author": "4y0",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/4y0/cm1/issues"
+  },
+  "homepage": "https://github.com/4y0/cm1#readme",
+  "dependencies": {
+    "commander": "2.9.0",
+    "node-cmd": "3.0.0",
+    "q": "1.5.0",
+    "request": "2.81.0",
+    "underscore": "1.8.3"
+  }
+}
