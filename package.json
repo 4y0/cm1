@@ -1,6 +1,6 @@
 {
   "name": "cm1",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Command Recaller",
   "main": "cm1.js",
   "preferGlobal": true,
