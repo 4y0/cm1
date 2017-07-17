@@ -97,7 +97,7 @@ if(program.add){
 	var localStorage = getStorage();
 	var file_rem_key = program.args[0]; 
 	var token = localStorage.default_token;
-	if(!localStorage.local[token]){
+	if(token && !localStorage.local[token]){
 		localStorage.local[token] = {commands:{}};
 	}
 	if(file_rem_key){
@@ -170,7 +170,7 @@ if(program.list){
 	var localStorage = getStorage();
 	var token = localStorage.default_token;
 
-	if(localStorage.local[token] && localStorage.local[token].commands){
+	if(token && localStorage.local[token] && localStorage.local[token].commands){
 		var commands = localStorage.local[token].commands
 		for(item in commands){
 			console.log('Key: ', item, ' Command: ', commands[item], ' To run: cm1 ', item);
@@ -188,7 +188,7 @@ if(program.modify){
 	var token = localStorage.default_token;
 	var new_command = program.args[0];
 	var command_key = program.modify;
-	if(localStorage.local[token] && localStorage.local[token].commands){
+	if(token && localStorage.local[token] && localStorage.local[token].commands){
 
 		if(localStorage.local[token].commands[command_key] && new_command){
 
@@ -205,7 +205,7 @@ if(program.rename){
 	var token = localStorage.default_token;
 	var new_command_key = program.args[0];
 	var old_command_key = program.rename;
-	if(localStorage.local[token] && localStorage.local[token].commands){
+	if(token && localStorage.local[token] && localStorage.local[token].commands){
 
 		if(new_command_key && localStorage.local[token].commands[old_command_key]){
 
@@ -224,7 +224,7 @@ if(program.clear){
 	var localStorage = getStorage();
 	var token = localStorage.default_token;
 	var command_to_clear = program.args[0];
-	if(localStorage.local[token] && localStorage.local[token].commands){
+	if(token && localStorage.local[token] && localStorage.local[token].commands){
 
 		if(command_to_clear && localStorage.local[token].commands[command_to_clear]){
 			delete localStorage.local[token].commands[command_to_clear];
