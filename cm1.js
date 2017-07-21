@@ -278,10 +278,24 @@ if(!program.pull && !program.push && !program.list && !program.clear && !program
 			console.log(command_to_recall);
 		}
 		else{
-			//nc.run(command_to_recall);
+	
 			console.log("==== Running command: ", command_to_recall, " ====");
-			nc.get(command_to_recall, function (err, data, stderr){
-				console.log(data);
+			var spawn = require('child_process').spawn;
+			var ci = spawn(command_to_recall, {
+				shell:true, 
+				stdio:'inherit'
+			});
+
+			ci.on('data', function (d){
+				console.log(d);
+			});
+
+			ci.on('error', function (e){
+				console.log("Failed to run command", e);
+			});
+
+			ci.on('exit', function(){
+				console.log("===== Finished executing command ====");
 			});
 		}
 	}
